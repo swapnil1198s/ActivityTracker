@@ -22,7 +22,8 @@ public class ChangeAgeController {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-           mainApp.showCaloriesBurnedScene(); 
+
+        mainApp.showCalorieGoalScene();
     }
     
     public void setMainApp(MainApp mainApp) {

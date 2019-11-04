@@ -11,6 +11,8 @@ import ch.makery.adress.view.DailyStepController;
 import ch.makery.adress.view.HomeController;
 import ch.makery.adress.view.SleepController;
 import ch.makery.adress.view.stepgoalController;
+import ch.makery.adress.view.calorieGoalController;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -210,6 +212,24 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+    public void showCalorieGoalScene() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/calorieGoal.fxml"));
+            Pane showCalorieGoalScene = (Pane) loader.load();
+
+            rootLayout.setCenter(showCalorieGoalScene);
+
+            // Give the controller access to the main app.
+            calorieGoalController controller = loader.getController();
+            controller.setMainApp(this);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public Stage getPrimaryStage() {
         return primaryStage;
     }
