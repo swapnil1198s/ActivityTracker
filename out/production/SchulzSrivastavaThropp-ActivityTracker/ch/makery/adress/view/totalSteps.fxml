@@ -11,7 +11,7 @@
    <children>
       <Pane layoutX="150.0" layoutY="100.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: grey;">
          <children>
-            <Text layoutX="20.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's total steps">
+            <Text layoutX="50.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily Steps">
                <font>
                   <Font size="29.0" />
                </font>
