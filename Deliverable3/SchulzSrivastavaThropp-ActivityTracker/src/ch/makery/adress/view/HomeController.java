@@ -29,7 +29,8 @@ public class HomeController {
         if (event.getSource() == calories)
            mainApp.showCaloriesBurnedScene(); 
         else if(event.getSource() == settings)
-           mainApp.showChangeDateScene(); 
+           mainApp.showChangeDateScene();
+        //mainApp.showSettingsList();
     }
     
     public void setMainApp(MainApp mainApp) {

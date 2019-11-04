@@ -12,7 +12,7 @@ import ch.makery.adress.view.HomeController;
 import ch.makery.adress.view.SleepController;
 import ch.makery.adress.view.stepgoalController;
 import ch.makery.adress.view.calorieGoalController;
-
+import ch.makery.adress.view.settingsListController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -222,6 +222,25 @@ public class MainApp extends Application {
 
             // Give the controller access to the main app.
             calorieGoalController controller = loader.getController();
+            controller.setMainApp(this);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+    public void showSettingsList() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/settings.fxml"));
+            Pane showSettingsList = (Pane) loader.load();
+
+            rootLayout.setCenter(showSettingsList);
+
+            // Give the controller access to the main app.
+            settingsListController controller = loader.getController();
             controller.setMainApp(this);
 
 
