@@ -9,6 +9,8 @@ import ch.makery.adress.MainApp;
 public class DailyStepController {
     @FXML
     private Button sleep;
+    @FXML
+    private Button settings;
 
     // Reference to the main application.
     private MainApp mainApp;
@@ -22,7 +24,10 @@ public class DailyStepController {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        mainApp.showSleepScene();
+        if(event.getSource() == settings)
+            mainApp.showSetStepGoalScene();
+            else
+                mainApp.showSleepScene();
     }
     
     public void setMainApp(MainApp mainApp) {

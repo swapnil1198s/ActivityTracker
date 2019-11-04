@@ -10,6 +10,7 @@ import ch.makery.adress.view.ChangeWeightController;
 import ch.makery.adress.view.DailyStepController;
 import ch.makery.adress.view.HomeController;
 import ch.makery.adress.view.SleepController;
+import ch.makery.adress.view.stepgoalController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -86,13 +87,30 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+    public void showSetStepGoalScene() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/stepgoal.fxml"));
+            Pane showSetStepGoalScene = (Pane) loader.load();
+
+            rootLayout.setCenter(showSetStepGoalScene);
+
+            // Give the controller access to the main app.
+            stepgoalController controller = loader.getController();
+            controller.setMainApp(this);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void showDailyStepScene() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/totalSteps.fxml"));
-            Pane showCaloriesBurned = (Pane) loader.load();
+            Pane showDailyStepScene = (Pane) loader.load();
             
-            rootLayout.setCenter(showCaloriesBurned);
+            rootLayout.setCenter(showDailyStepScene);
 
             // Give the controller access to the main app.
            DailyStepController controller = loader.getController();
