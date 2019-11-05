@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import ch.makery.adress.MainApp;
 
 
-public class settingsListController {
+public class SettingsListController {
     @FXML
     private Button settings;
 
@@ -14,7 +14,7 @@ public class settingsListController {
     // Reference to the main application.
     private MainApp mainApp;
 
-    public settingsListController() {
+    public SettingsListController() {
     }
 
     @FXML

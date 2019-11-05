@@ -10,6 +10,8 @@ public class CaloriesBurnedController {
     private Button steps;
     @FXML
     private Button settings;
+    
+
 
     // Reference to the main application.
     private MainApp mainApp;

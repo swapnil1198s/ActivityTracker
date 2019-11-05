@@ -10,9 +10,9 @@ import ch.makery.adress.view.ChangeWeightController;
 import ch.makery.adress.view.DailyStepController;
 import ch.makery.adress.view.HomeController;
 import ch.makery.adress.view.SleepController;
-import ch.makery.adress.view.stepgoalController;
-import ch.makery.adress.view.calorieGoalController;
-import ch.makery.adress.view.settingsListController;
+import ch.makery.adress.view.StepGoalController;
+import ch.makery.adress.view.CalorieGoalController;
+import ch.makery.adress.view.SettingsListController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -98,7 +98,7 @@ public class MainApp extends Application {
             rootLayout.setCenter(showSetStepGoalScene);
 
             // Give the controller access to the main app.
-            stepgoalController controller = loader.getController();
+            StepGoalController controller = loader.getController();
             controller.setMainApp(this);
 
 
@@ -221,7 +221,7 @@ public class MainApp extends Application {
             rootLayout.setCenter(showCalorieGoalScene);
 
             // Give the controller access to the main app.
-            calorieGoalController controller = loader.getController();
+            CalorieGoalController controller = loader.getController();
             controller.setMainApp(this);
 
 
@@ -240,7 +240,7 @@ public class MainApp extends Application {
             rootLayout.setCenter(showSettingsList);
 
             // Give the controller access to the main app.
-            settingsListController controller = loader.getController();
+            SettingsListController controller = loader.getController();
             controller.setMainApp(this);
 
 

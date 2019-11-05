@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import ch.makery.adress.MainApp;
 
-public class stepgoalController {
+public class StepGoalController {
 
     @FXML
     private Button next;
@@ -13,7 +13,7 @@ public class stepgoalController {
     // Reference to the main application.
     private MainApp mainApp;
 
-    public stepgoalController() {
+    public StepGoalController() {
     }
 
     @FXML

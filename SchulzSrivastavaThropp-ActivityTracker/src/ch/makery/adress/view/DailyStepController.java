@@ -3,7 +3,9 @@ package ch.makery.adress.view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import ch.makery.adress.MainApp;
+import ch.makery.adress.model.DailySteps;
 
 
 public class DailyStepController {
@@ -11,7 +13,10 @@ public class DailyStepController {
     private Button sleep;
     @FXML
     private Button settings;
+    @FXML
+    private Label steps; 
 
+    private DailySteps model; 
     // Reference to the main application.
     private MainApp mainApp;
 
@@ -20,6 +25,7 @@ public class DailyStepController {
 
     @FXML
     private void initialize() { 
+    	steps.setText(Integer.toString(model.getDailySteps()));
     }
     
     @FXML

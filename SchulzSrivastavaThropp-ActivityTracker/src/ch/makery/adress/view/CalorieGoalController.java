@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class calorieGoalController {
+public class CalorieGoalController {
 
     @FXML
     private Button next;
@@ -13,7 +13,7 @@ public class calorieGoalController {
     // Reference to the main application.
     private MainApp mainApp;
 
-    public calorieGoalController() {
+    public CalorieGoalController() {
     }
 
     @FXML
