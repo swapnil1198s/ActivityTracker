@@ -23,6 +23,8 @@ public class ActivityTest {
 		//then 
 		assertEquals (actual, expected);
 	}
+	
+	// test, test
 	@Test
 	public void testRecordActivityWithMultipleRecords() {
 		//given 
