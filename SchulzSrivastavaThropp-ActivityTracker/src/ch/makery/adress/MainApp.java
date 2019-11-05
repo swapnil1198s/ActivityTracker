@@ -11,6 +11,7 @@ import ch.makery.adress.view.DailyStepController;
 import ch.makery.adress.view.HomeController;
 import ch.makery.adress.view.SleepController;
 import ch.makery.adress.view.StepGoalController;
+import ch.makery.adress.model.DailySteps;
 import ch.makery.adress.view.CalorieGoalController;
 import ch.makery.adress.view.SettingsListController;
 import javafx.application.Application;
@@ -25,6 +26,7 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    //private DailySteps dailySteps; 
  
     
     public MainApp() {
@@ -33,7 +35,7 @@ public class MainApp extends Application {
   
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-
+        //dailySteps = new DailySteps(); 
         initRootLayout();
 
         showHomeScene();
@@ -41,6 +43,7 @@ public class MainApp extends Application {
     
     public void initRootLayout() {
         try {
+        	
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
@@ -108,6 +111,7 @@ public class MainApp extends Application {
     }
     public void showDailyStepScene() {
         try {
+        	 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/totalSteps.fxml"));
             Pane showDailyStepScene = (Pane) loader.load();
@@ -117,6 +121,7 @@ public class MainApp extends Application {
             // Give the controller access to the main app.
            DailyStepController controller = loader.getController();
            controller.setMainApp(this);
+           //controller.setDailySteps (dailySteps);
  
 
         } catch (IOException e) {

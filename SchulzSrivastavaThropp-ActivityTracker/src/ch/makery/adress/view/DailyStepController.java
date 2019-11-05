@@ -21,10 +21,14 @@ public class DailyStepController {
     private MainApp mainApp;
 
     public DailyStepController() {
+    	// needs Work. Shoukd only create a DailStepObject once a day. 
+    	model = new  DailySteps(); 
+    	
     }
-
+    
     @FXML
-    private void initialize() { 
+    private void initialize() {
+    	
     	steps.setText(Integer.toString(model.getDailySteps()));
     }
     
@@ -40,4 +44,9 @@ public class DailyStepController {
         this.mainApp = mainApp;
 
     }
+
+	public void setDailySteps(DailySteps dailySteps) {
+		model = dailySteps; 
+		
+	}
 }

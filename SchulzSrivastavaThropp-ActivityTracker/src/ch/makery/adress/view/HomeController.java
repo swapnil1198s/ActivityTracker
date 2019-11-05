@@ -35,9 +35,10 @@ public class HomeController {
 
     @FXML
     private void initialize() {
-    	 Thread clock = new Thread() {
+    	// needs work: Thread gives Error. Right now only the time of the point of time when teh scene was opened is shown 
+    	/* Thread clock = new Thread() {
     	        public void run() {
-    	            for (;;) {
+    	            for (;;) {*/
     	                Calendar cal = Calendar.getInstance();
     	                hh =cal.get(Calendar.HOUR);
     	                if ( hh <10) {
@@ -58,11 +59,11 @@ public class HomeController {
     	                hour.setText(minString);
     	                //System.out.println(hour + ":" + (minute) + ":" + second);
     	            }
-    	        }
+    	       /* }
     	    };
     	    clock.start();
     	}
- 
+ */
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
