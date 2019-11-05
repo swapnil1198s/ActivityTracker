@@ -4,7 +4,7 @@ public class Activity {
 	private DailySteps dailySteps;
 	private DailyCalories dailyCalories; 
 	private int meters;
-	private double averageSpeed;
+	private int averageSpeed;
 	private int caloriesBurned;
 	private int stepsTaken;
 	private int activityTime;
@@ -20,11 +20,11 @@ public class Activity {
 	}
 
 	public void recordActivity(int mt, int steps) {
-		this.meters = +mt;
-		this.stepsTaken = +steps;
-		this.caloriesBurned = +calculateCalories(steps);
+		this.meters += mt;
+		this.stepsTaken += steps;
+		this.caloriesBurned += calculateCalories(steps);
 		// meters and steps are updated every minute from the sensor
-		this.activityTime = +1;
+		this.activityTime += 1;
 		updateAverageSpeed();
 	}
 
@@ -46,7 +46,7 @@ public class Activity {
 		return meters;
 	}
 
-	public double getAverageSpeed() {
+	public int getAverageSpeed() {
 		return averageSpeed;
 	}
 
@@ -54,7 +54,7 @@ public class Activity {
 		return stepsTaken;
 	}
 
-	public int caloriesBurned() {
+	public int getCaloriesBurned() {
 		return caloriesBurned;
 	}
 }
