@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.adress.view.stepgoalController">
    <children>
       <Pane layoutX="158.0" layoutY="72.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: yellow;">
          <children>
@@ -32,6 +32,6 @@
             </Text>
          </children>
       </Pane>
-      <Button layoutX="217.0" layoutY="45.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="55.0" style="-fx-background-color: black;" />
+      <Button fx:id="next" layoutX="217.0" layoutY="45.0" onAction="#handleButtonAction" mnemonicParsing="false" prefHeight="15.0" prefWidth="55.0" style="-fx-background-color: black;" />
    </children>
 </Pane>
