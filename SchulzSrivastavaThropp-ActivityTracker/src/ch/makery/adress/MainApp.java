@@ -12,6 +12,7 @@ import ch.makery.adress.view.HomeController;
 import ch.makery.adress.view.SleepController;
 import ch.makery.adress.view.StepGoalController;
 import ch.makery.adress.model.DailySteps;
+import ch.makery.adress.model.TrackerSystem;
 import ch.makery.adress.view.CalorieGoalController;
 import ch.makery.adress.view.SettingsListController;
 import javafx.application.Application;
@@ -26,7 +27,7 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
-    //private DailySteps dailySteps; 
+    private TrackerSystem trackerSystem ; 
  
     
     public MainApp() {
@@ -35,7 +36,7 @@ public class MainApp extends Application {
   
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        //dailySteps = new DailySteps(); 
+        this.trackerSystem = new TrackerSystem();  
         initRootLayout();
 
         showHomeScene();

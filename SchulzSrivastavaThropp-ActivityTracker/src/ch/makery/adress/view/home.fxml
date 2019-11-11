@@ -6,47 +6,41 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.adress.view.HomeController">
    <children>
       <Pane prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: grey;">
          <children>
-            <Text layoutX="154.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="pm" />
-            <Text layoutX="19.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10/01/19" textAlignment="CENTER" wrappingWidth="162.2060546875">
-               <font>
-                  <Font size="38.0" />
-               </font>
-            </Text>
-            <Label layoutX="153.0" layoutY="53.0" text="calories">
+            <Label layoutX="13.0" layoutY="40.0" prefHeight="28.0" prefWidth="38.0" text="settings">
                <font>
                   <Font size="11.0" />
                </font>
             </Label>
-            <Label layoutX="13.0" layoutY="61.0" text="settings">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="51.0" fitWidth="35.0" layoutX="154.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@calories%20icon.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="minute" alignment="TOP_CENTER" contentDisplay="TOP" layoutY="45.0" maxHeight="115.0" minHeight="85.0" minWidth="200.0" onDragDetected="#initialize" prefHeight="115.0" prefWidth="200.0" text="10" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="hour" alignment="TOP_CENTER" contentDisplay="TOP" layoutY="30.0" maxHeight="121.0" minHeight="85.0" minWidth="200.0" onDragDetected="#initialize" prefHeight="121.0" prefWidth="200.0" text="10" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="System Bold Italic" size="96.0" />
                </font></Label>
-            <Label fx:id="hour" alignment="CENTER" contentDisplay="CENTER" layoutY="132.0" minHeight="85.0" minWidth="200.0" onDragDetected="#initialize" text="08" textAlignment="CENTER">
+            <Label fx:id="minute" alignment="CENTER" contentDisplay="CENTER" layoutY="106.0" minHeight="85.0" minWidth="200.0" onDragDetected="#initialize" prefHeight="167.0" prefWidth="200.0" text="08" textAlignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="96.0" />
                </font>
             </Label>
+            <Label fx:id="dateFXML" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="226.0" prefHeight="74.0" prefWidth="162.0" text="11/11/19">
+               <font>
+                  <Font name="System Bold Italic" size="31.0" />
+               </font></Label>
+            <Button fx:id="startActivity" layoutX="134.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="64.0" style="-fx-background-color: grey;" />
+            <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="148.0" layoutY="6.0">
+               <image>
+                  <Image url="@activity%20icon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="144.0" layoutY="43.0" prefHeight="22.0" prefWidth="45.0" text="activity" />
          </children>
       </Pane>
       <Button fx:id="calories" layoutX="200.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="15.0" style="-fx-background-color: black;" />
-      <Button fx:id="settings" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="52.0" style="-fx-background-color: grey;" />
-      <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="14.0" layoutY="17.0">
+      <Button fx:id="settings" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="43.0" prefWidth="52.0" style="-fx-background-color: grey;" />
+      <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="14.0" layoutY="7.0">
          <image>
             <Image url="@Settings_black-512.png" />
          </image>

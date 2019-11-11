@@ -1,26 +1,36 @@
 package ch.makery.adress.view;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.util.Duration;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.Calendar;
+import java.util.Date;
 
 import ch.makery.adress.MainApp;
 
 
-public class HomeController {
+public class HomeController extends Thread{
     @FXML
     private Button calories;
     @FXML
     private Button settings;
+    @FXML 
+    private Button startActivity; 
     @FXML
     private Label minute; 
     @FXML
     private Label hour;
+    @FXML 
+    private Label dateFXML; 
 
     private int hh;
     private String hhString;
@@ -35,35 +45,39 @@ public class HomeController {
 
     @FXML
     private void initialize() {
-    	// needs work: Thread gives Error. Right now only the time of the point of time when teh scene was opened is shown 
-    	/* Thread clock = new Thread() {
-    	        public void run() {
-    	            for (;;) {*/
-    	                Calendar cal = Calendar.getInstance();
-    	                hh =cal.get(Calendar.HOUR);
-    	                if ( hh <10) {
-    	                	hhString = "0" + Integer.toString(hh);
-    	                }
-    	                else {
-    	                	hhString= Integer.toString(hh);
-    	                }
-    	                minute.setText(hhString+ ":"); 
-    	                
-    	                min = cal.get(Calendar.MINUTE);
-    	                if (min <10) {
-    	                	minString = "0" + Integer.toString(min); 
-    	                }
-    	                else {
-    	                	minString = Integer.toString(min); 
-    	                }
-    	                hour.setText(minString);
-    	                //System.out.println(hour + ":" + (minute) + ":" + second);
-    	            }
-    	       /* }
-    	    };
-    	    clock.start();
+    	// maybe add am or pm
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {        
+            LocalTime currentTime = LocalTime.now();
+            hh =currentTime.getHour();
+            if ( hh <10) {
+            	hhString = "0" + Integer.toString(hh);
+            }
+            else {
+            	hhString= Integer.toString(hh);
+            }
+            hour.setText(hhString+ ":"); 
+            
+            min = currentTime.getMinute();
+            if (min <10) {
+            	minString = "0" + Integer.toString(min); 
+            }
+            else {
+            	minString = Integer.toString(min) +" "; 
+            }
+            minute.setText(minString);
+            
+            DateFormat dateFormat = new SimpleDateFormat("MM/dd/yy");
+            //get current date time with Date()
+            Date date = new Date();
+            dateFXML.setText(dateFormat.format(date)); 
+        }),
+             new KeyFrame(Duration.seconds(1))
+        );
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+
     	}
- */
+ 
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -73,6 +87,10 @@ public class HomeController {
         else if(event.getSource() == settings)
            mainApp.showChangeDateScene();
         //mainApp.showSettingsList();
+        else if (event.getSource() == startActivity) {
+        	//do something
+        }
+        	
     }
     
     
