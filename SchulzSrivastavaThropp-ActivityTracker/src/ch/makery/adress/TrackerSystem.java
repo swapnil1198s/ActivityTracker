@@ -1,11 +1,15 @@
-package ch.makery.adress.model;
+package ch.makery.adress;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Timer;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
+import ch.makery.adress.model.Activity;
+import ch.makery.adress.model.DailyCalories;
+import ch.makery.adress.model.DailySteps;
+import ch.makery.adress.model.Sensor;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -22,6 +26,7 @@ public class TrackerSystem {
 	private DailyCalories currentDailyCalories; 
 	private DailySteps currentDailySteps;
 	private Activity currentActivity; 
+	private Sensor sensor; 
 	
 	private int age; 
 	private int weight; // in lbs
@@ -35,6 +40,7 @@ public class TrackerSystem {
 		age= 40; 
 		weight = 150; 
 		
+		sensor= new Sensor(); 
 		setUpDailySteps(); 
 		setUpDailyCalories();
 		setUpActivities(); 
@@ -45,9 +51,30 @@ public class TrackerSystem {
 		checkDate(); 
 	}
 	
-
+	ScheduledExecutorService service;
 	public void startActivity () {
-		currentActivity = new Activity(currentDailySteps, currentDailyCalories); 
+		currentActivity = new Activity(currentDailySteps, currentDailyCalories);
+		 
+		 Runnable runnable = new Runnable() {	      
+			 public void run() {	        	        
+				 		int sensorfeedback [] = sensor.meassureActivity(); 
+				   	 	currentActivity.recordActivity(sensorfeedback[0],sensorfeedback[1], sensorfeedback[2]);
+				   	}	    	      	    
+			 };	    	    
+			 service = Executors.newSingleThreadScheduledExecutor();
+			 service.scheduleAtFixedRate(runnable, 0, 30, TimeUnit.SECONDS);	  
+	}
+	
+	public void endActivity() {
+		// end the loop for getting data from the sensor
+		service.shutdown();
+		// update DailySteps and DailyCalories
+		currentDailySteps.addSteps(currentActivity.getSteps()); 
+		currentDailyCalories.addCalories(currentActivity.getCaloriesBurned());
+		// save activity in front of our "Database"
+		for (int i = saveActivities.length -1; i>= 1 ; i--) {
+			saveActivities[i]= saveActivities[i-1]; 
+		}
 	}
 		
 
@@ -121,6 +148,15 @@ public class TrackerSystem {
 	}
 	public void setWeight ( int weight) {
 		this.weight = weight; 
+	}
+	public Activity getCurrentActivity() {
+		return currentActivity; 
+	}
+	public int getDailyCalories() {
+		return currentDailyCalories.getDailyCalories();
+	}
+	public int getDailySteps () {
+		return currentDailySteps.getDailySteps(); 
 	}
 
 }

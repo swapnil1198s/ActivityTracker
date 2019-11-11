@@ -12,13 +12,12 @@ import javafx.util.Duration;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
-import java.util.Calendar;
 import java.util.Date;
 
 import ch.makery.adress.MainApp;
 
 
-public class HomeController extends Thread{
+public class HomeController{
     @FXML
     private Button calories;
     @FXML
@@ -88,7 +87,8 @@ public class HomeController extends Thread{
            mainApp.showChangeDateScene();
         //mainApp.showSettingsList();
         else if (event.getSource() == startActivity) {
-        	//do something
+        	mainApp.getTrackerSystem().startActivity();
+        	mainApp.showActivityScene(); 
         }
         	
     }

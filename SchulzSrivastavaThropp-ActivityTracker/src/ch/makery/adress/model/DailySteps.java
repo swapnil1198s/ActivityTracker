@@ -4,11 +4,11 @@ public class DailySteps {
  private int dailySteps ; 
  
  public DailySteps () {
-	 dailySteps = 1000; 
+	 dailySteps = 0; 
  }
  
  public void addSteps (int amount) {
-	 dailySteps =+ amount; 
+	 dailySteps += amount; 
  }
  
  public int getDailySteps() {

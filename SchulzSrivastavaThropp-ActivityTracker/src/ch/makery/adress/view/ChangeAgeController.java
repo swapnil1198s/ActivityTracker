@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import ch.makery.adress.MainApp;
-import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 
 public class ChangeAgeController {

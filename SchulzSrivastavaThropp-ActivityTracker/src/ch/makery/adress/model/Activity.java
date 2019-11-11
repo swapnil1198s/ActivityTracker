@@ -8,6 +8,8 @@ public class Activity {
 	private int caloriesBurned;
 	private int stepsTaken;
 	private int activityTime;
+	private int lastHeartRate; 
+	//private int averageHeartRate; 
 
 	public Activity(DailySteps dailySteps, DailyCalories dailyCalories) {
 		this.dailySteps = dailySteps;
@@ -19,14 +21,20 @@ public class Activity {
 		activityTime = 0;
 	}
 
-	public void recordActivity(int mt, int steps) {
+	public void recordActivity(int heartRate, int mt, int steps) {
 		this.meters += mt;
 		this.stepsTaken += steps;
 		this.caloriesBurned += calculateCalories(steps);
 		// meters and steps are updated every minute from the sensor
 		this.activityTime += 1;
+		this.lastHeartRate = heartRate; 
+		//updateAverageHeartRate(); 
 		updateAverageSpeed();
 	}
+
+	/*private void updateAverageHeartRate() {
+		this.averageHeartRate = 
+	}*/
 
 	public void stopActivity() {
 		dailySteps.addSteps(stepsTaken);
@@ -35,9 +43,9 @@ public class Activity {
 
 	private int calculateCalories(int steps) {
 		// needs work here. Here is just assumed that 1 steps burns 5 calories
-		return steps * 5;
+		return  (steps * 5);
 	}
-
+	
 	private void updateAverageSpeed() {
 		averageSpeed = meters / activityTime;
 	}
@@ -50,11 +58,15 @@ public class Activity {
 		return averageSpeed;
 	}
 
-	public int getStepsTaken() {
+	public int getSteps() {
 		return stepsTaken;
 	}
 
 	public int getCaloriesBurned() {
 		return caloriesBurned;
+	}
+	
+	public int getHeartRate () {
+		return lastHeartRate; 
 	}
 }

@@ -16,9 +16,9 @@ public class ActivityTest {
 	@Test
 	public void testRecordActivity() {
 		//given 
-		sut.recordActivity(30, 40); 
+		sut.recordActivity(100, 30, 40); 
 		// when 
-		String actual = Integer.toString(sut.getAverageSpeed()) + Integer.toString(sut.getCaloriesBurned()) +Integer.toString(sut.getMeters())+Integer.toString(sut.getStepsTaken());
+		String actual = Integer.toString(sut.getAverageSpeed()) + Integer.toString(sut.getCaloriesBurned()) +Integer.toString(sut.getMeters())+Integer.toString(sut.getSteps());
 		String expected = "30"+"200"+ "30"+"40"; 
 		//then 
 		assertEquals (actual, expected);
@@ -28,11 +28,11 @@ public class ActivityTest {
 	@Test
 	public void testRecordActivityWithMultipleRecords() {
 		//given 
-		sut.recordActivity(30, 40); 
-		sut.recordActivity(20, 50);
-		sut.recordActivity(5, 15);
+		sut.recordActivity(100, 30, 40); 
+		sut.recordActivity(100, 20, 50);
+		sut.recordActivity(100, 5, 15);
 		// when 
-		String actual = Integer.toString(sut.getAverageSpeed()) + Integer.toString(sut.getCaloriesBurned()) +Integer.toString(sut.getMeters())+Integer.toString(sut.getStepsTaken());
+		String actual = Integer.toString(sut.getAverageSpeed()) + Integer.toString(sut.getCaloriesBurned()) +Integer.toString(sut.getMeters())+Integer.toString(sut.getSteps());
 		String expected = "18"+"525"+ "55"+"105"; 
 		//then 
 		assertEquals (actual, expected);
@@ -41,7 +41,7 @@ public class ActivityTest {
 	@Test
 	public void testStopActivity () {
 		//given
-		sut.recordActivity(30, 40); 
+		sut.recordActivity(100, 30, 40); 
 		sut.stopActivity();
 		//when 
 		String actual = Integer.toString(testDailyCal.getDailyCalories()) + Integer.toString(testDailySteps.getDailySteps()); 

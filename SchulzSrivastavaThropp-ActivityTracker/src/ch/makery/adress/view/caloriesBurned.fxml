@@ -17,20 +17,15 @@
                   <Font size="29.0" />
                </font>
             </Text>
-            <Text fill="#800505" layoutX="14.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="double click button to exit">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Text>
             <Button fx:id="settings" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="48.0" prefWidth="44.0" style="-fx-background-color: grey;" />
             <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="7.0" layoutY="10.0">
                <image>
                   <Image url="@Settings_black-512.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="48.0" prefHeight="95.0" prefWidth="234.0" text="2345" textAlignment="CENTER">
+            <Label fx:id="calories" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="48.0" prefHeight="153.0" prefWidth="300.0" text="2345" textAlignment="CENTER">
                <font>
-                  <Font size="71.0" />
+                  <Font name="System Bold Italic" size="84.0" />
                </font></Label>
          </children>
       </Pane>

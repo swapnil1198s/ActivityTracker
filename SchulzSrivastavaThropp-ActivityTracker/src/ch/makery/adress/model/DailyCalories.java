@@ -8,7 +8,7 @@ public class DailyCalories {
  }
  
  public void addCalories(int amount) {
-	 dailyCalories =+ amount; 
+	 dailyCalories += amount; 
  }
  
  public int getDailyCalories () {

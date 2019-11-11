@@ -10,27 +10,25 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.adress.view.DailyStepController">
    <children>
-      <Pane layoutX="150.0" layoutY="100.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: grey;">
+      <Pane layoutX="158.0" layoutY="72.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: grey;">
          <children>
-            <Text layoutX="50.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily Steps">
+            <Text fill="#003c97" layoutX="77.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="daily steps: ">
                <font>
                   <Font size="29.0" />
                </font>
             </Text>
-
             <Button fx:id="settings" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="48.0" prefWidth="44.0" style="-fx-background-color: grey;" />
             <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="7.0" layoutY="10.0">
                <image>
                   <Image url="@Settings_black-512.png" />
                </image>
             </ImageView>
-            <Label fx:id="steps" alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="65.0" prefHeight="111.0" prefWidth="237.0">
+            <Label fx:id="steps" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="48.0" prefHeight="153.0" prefWidth="300.0" text="2345" textAlignment="CENTER">
                <font>
-                  <Font name="System Italic" size="76.0" />
-               </font>
-            </Label>
+                  <Font name="System Bold Italic" size="84.0" />
+               </font></Label>
          </children>
       </Pane>
-      <Button fx:id="sleep" layoutX="213.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="15.0" prefWidth="55.0" style="-fx-background-color: black;" />
+      <Button fx:id="sleep" layoutX="217.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="15.0" prefWidth="55.0" style="-fx-background-color: black;" />
    </children>
 </Pane>
