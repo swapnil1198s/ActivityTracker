@@ -1,31 +1,41 @@
 package ch.makery.adress.view;
 
-	import javafx.event.ActionEvent;
-	import javafx.fxml.FXML;
-	import javafx.scene.control.Button;
-	import ch.makery.adress.MainApp;
+import ch.makery.adress.MainApp;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-	public class SleepController {
-	    @FXML
-	    private Button home;
+public class SleepController {
+	 @FXML
+	    private Button sleepPattern ;
+	 @FXML 
+	 private Button button; 
 
 
 	    // Reference to the main application.
 	    private MainApp mainApp;
 
 	    public SleepController() {
+	    	
 	    }
 
 	    @FXML
-	    private void initialize() {   
+	    private void initialize() { 
+	    	/*Image image = new Image(getClass().getResourceAsStream("a.png"));
+	        Button button1 = new Button("Accept");
+	        button1.setGraphic(new ImageView(image));*/
 	    }
 	    
 	    @FXML
 	    private void handleButtonAction(ActionEvent event) {
-	        mainApp.showHomeScene();;
+	    	mainApp.getTrackerSystem().endSleep();
+	        mainApp.showSleepPatternScene();
 	    }
 	    public void setMainApp(MainApp mainApp) {
 	        this.mainApp = mainApp;
 
 	    }
 	}
+

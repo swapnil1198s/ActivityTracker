@@ -46,7 +46,7 @@ public class DailyStepController {
             clock.stop();
         }
             else
-                mainApp.showSleepScene();
+                mainApp.showSleepPatternScene();
         		clock.stop(); 
     }
     

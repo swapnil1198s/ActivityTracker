@@ -9,11 +9,12 @@ import ch.makery.adress.view.ChangeTimeController;
 import ch.makery.adress.view.ChangeWeightController;
 import ch.makery.adress.view.DailyStepController;
 import ch.makery.adress.view.HomeController;
-import ch.makery.adress.view.SleepController;
+import ch.makery.adress.view.SleepPatternController;
 import ch.makery.adress.view.StepGoalController;
 import ch.makery.adress.view.ActivitySceneController;
 import ch.makery.adress.view.CalorieGoalController;
 import ch.makery.adress.view.SettingsListController;
+import ch.makery.adress.view.SleepController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,7 +28,6 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
     private TrackerSystem trackerSystem ; 
- 
     
     public MainApp() {
 
@@ -128,6 +128,24 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+    public void showSleepPatternScene() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/sleepPattern.fxml"));
+            Pane showCaloriesBurned = (Pane) loader.load();
+            
+            rootLayout.setCenter(showCaloriesBurned);
+
+            // Give the controller access to the main app.
+           SleepPatternController controller = loader.getController();
+           controller.setMainApp(this);
+ 
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     public void showSleepScene() {
         try {
             FXMLLoader loader = new FXMLLoader();

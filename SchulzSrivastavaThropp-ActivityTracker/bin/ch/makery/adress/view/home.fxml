@@ -11,15 +11,6 @@
    <children>
       <Pane prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: grey;">
          <children>
-            <Label layoutX="13.0" layoutY="40.0" prefHeight="28.0" prefWidth="38.0" text="settings">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Label>
-            <Label fx:id="hour" alignment="TOP_CENTER" contentDisplay="TOP" layoutY="30.0" maxHeight="121.0" minHeight="85.0" minWidth="200.0" onDragDetected="#initialize" prefHeight="121.0" prefWidth="200.0" text="10" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="System Bold Italic" size="96.0" />
-               </font></Label>
             <Label fx:id="minute" alignment="CENTER" contentDisplay="CENTER" layoutY="106.0" minHeight="85.0" minWidth="200.0" onDragDetected="#initialize" prefHeight="167.0" prefWidth="200.0" text="08" textAlignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="96.0" />
@@ -29,21 +20,35 @@
                <font>
                   <Font name="System Bold Italic" size="31.0" />
                </font></Label>
-            <Button fx:id="startActivity" layoutX="134.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="64.0" style="-fx-background-color: grey;" />
-            <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="148.0" layoutY="6.0">
-               <image>
-                  <Image url="@activity%20icon.png" />
-               </image>
-            </ImageView>
+            <Button fx:id="startActivity" layoutX="134.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="64.0" style="-fx-background-color: grey;">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="37.0">
+                     <image>
+                        <Image url="@activity%20icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Label layoutX="144.0" layoutY="43.0" prefHeight="22.0" prefWidth="45.0" text="activity" />
+            <Label fx:id="hour" alignment="TOP_CENTER" contentDisplay="TOP" layoutY="31.0" maxHeight="121.0" minHeight="85.0" minWidth="200.0" onDragDetected="#initialize" prefHeight="121.0" prefWidth="200.0" text="10" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="96.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="41.0" prefHeight="28.0" prefWidth="38.0" text="sleep">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Button fx:id="calories" layoutX="200.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="15.0" style="-fx-background-color: black;" />
-      <Button fx:id="settings" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="43.0" prefWidth="52.0" style="-fx-background-color: grey;" />
-      <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="14.0" layoutY="7.0">
-         <image>
-            <Image url="@Settings_black-512.png" />
-         </image>
-      </ImageView>
+      <Button fx:id="settings" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="43.0" prefWidth="52.0" style="-fx-background-color: grey;">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="52.0">
+               <image>
+                  <Image url="@sleep.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </Pane>

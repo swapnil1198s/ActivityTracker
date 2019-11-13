@@ -21,6 +21,11 @@ public class Sensor {
     		int [] result = {heartrate, meters,steps}; 
     		return result;
     }
+
+	public int meassureSleep() {
+		System.out.print("current Heartrate: ");
+		return scanner.nextInt();
+	}
 }
 
 	

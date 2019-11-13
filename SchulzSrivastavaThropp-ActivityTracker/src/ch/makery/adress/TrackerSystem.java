@@ -10,6 +10,7 @@ import ch.makery.adress.model.Activity;
 import ch.makery.adress.model.DailyCalories;
 import ch.makery.adress.model.DailySteps;
 import ch.makery.adress.model.Sensor;
+import ch.makery.adress.model.Sleep;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -27,6 +28,7 @@ public class TrackerSystem {
 	private DailySteps currentDailySteps;
 	private Activity currentActivity; 
 	private Sensor sensor; 
+	private Sleep sleep; 
 	
 	private int age; 
 	private int weight; // in lbs
@@ -76,7 +78,30 @@ public class TrackerSystem {
 			saveActivities[i]= saveActivities[i-1]; 
 		}
 	}
-		
+	
+	ScheduledExecutorService service2;
+	public void startSleep () {
+		sleep = new Sleep();
+		 Runnable runnable = new Runnable() {	      
+			 public void run() {	        	        
+				 		int sensorfeedback = sensor.meassureSleep(); 
+				   	 	sleep.recordSleep(sensorfeedback);
+				   	}	    	      	    
+			 };	    	    
+			 service = Executors.newSingleThreadScheduledExecutor();
+			 service.scheduleAtFixedRate(runnable, 0, 5, TimeUnit.MINUTES);	  
+	}
+	
+	public void endSleep() {
+		// end the loop for getting data from the sensor
+		service2.shutdown();
+		// update DailySteps and DailyCalories
+		sleep.endSleep();
+		// save activity in front of our "Database"
+		for (int i = saveActivities.length -1; i>= 1 ; i--) {
+			saveActivities[i]= saveActivities[i-1]; 
+		}
+	}
 
 	// every new Day this method stores the old DailyStep and DailyCaloriesObject and create a new One for the current day
 	private void checkDate() {
@@ -157,6 +182,9 @@ public class TrackerSystem {
 	}
 	public int getDailySteps () {
 		return currentDailySteps.getDailySteps(); 
+	}
+	public Sleep getSleep() {
+		return sleep; 
 	}
 
 }
