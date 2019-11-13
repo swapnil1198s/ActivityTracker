@@ -1,5 +1,6 @@
 package ch.makery.adress.model;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Date;
@@ -7,22 +8,32 @@ import java.util.Date;
 public class Sleep {
 	
 	private long minutes;
-	private Date startTime; 
-	private Date endTime;
-	private int[] heartrate; 
+	private int startTime; 
+	private int endTime;
+	private int[] heartrate = {0}; 
 	
 	Instant start;
+	SimpleDateFormat formatter = new SimpleDateFormat("HH");
+	
+	public Sleep (Date startDate, Date endDate) {
+		startTime = Integer.parseInt(formatter.format(startDate));
+		endTime = Integer.parseInt(formatter.format(endDate));	  
+	}
+	
 	
 	public Sleep () {
-		//startTime= new Date(); 
+		Date date = new Date(); 
+		
+		startTime = Integer.parseInt(formatter.format(date));
 		 start = Instant.now();
 		 heartrate = new int [0]; 
 		 
 	}
 	
 	public void endSleep () {
-		endTime = new Date(); 
-		//hours = endTime.getHours() - startTime.getHours(); 
+		Date date = new Date(); 
+		endTime = Integer.parseInt(formatter.format(date));
+		
 		Instant finish = Instant.now();
 		minutes = Duration.between(start, finish).toMinutes();
 	}
@@ -30,12 +41,24 @@ public class Sleep {
 	public long getSleepTime (){
 		return minutes; 
 	}
-	public Date getSleepStartTime (){
-		return startTime; 
+	public String getSleepStartTime (){
+		if (startTime <13) {
+			return Integer.toString(startTime) +" am";
+		}
+		else {
+			return Integer.toString(startTime -12)+" pm"; 
+		}
 	}
-	public Date getSleepEndeTime (){
-		return endTime; 
+	
+	public String  getSleepEndeTime (){
+		if (endTime <13) {
+			return Integer.toString(endTime) +" am";
+		}
+		else {
+			return Integer.toString(endTime -12)+" pm"; 
+		}
 	}
+	
 	public int getLevel () {
 		int sum = 0; 
 		for (int i =0; i< heartrate.length; i++) {
@@ -69,10 +92,10 @@ public class Sleep {
 
 	
 	// For testing reasons
-	public void setStartTime (Date startTime) {
+	public void setStartTime (int startTime) {
 		this.startTime = startTime; 
 	}
-	public void setEndeTime (Date endTime) {
+	public void setEndeTime (int endTime) {
 		this.endTime = endTime; 
 	}
 

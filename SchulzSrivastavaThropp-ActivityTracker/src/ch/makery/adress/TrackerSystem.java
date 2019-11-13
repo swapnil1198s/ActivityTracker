@@ -1,5 +1,7 @@
 package ch.makery.adress;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.Executors;
@@ -17,9 +19,10 @@ import javafx.animation.Timeline;
 import javafx.util.Duration;
 
 public class TrackerSystem {
-	// The system is able to store the DailySteps an the Daily Calories of the last 10 days
+	// The system is able to store the Sleep, DailySteps an the Daily Calories of the last 10 days
 	private DailyCalories saveDailyCalories []  = new DailyCalories [10];  
 	private DailySteps saveDailySteps [] = new DailySteps [10];
+	private Sleep saveSleeps [] = new Sleep [10];
 	//.. and the last 30 activities
 	private Activity saveActivities [] = new Activity [30];
 	
@@ -37,6 +40,8 @@ public class TrackerSystem {
 	Calendar cal1;
 	Calendar cal2; 
 	
+	ScheduledExecutorService service;
+	
 	public TrackerSystem () {
 		// set a default age and weight. Maybe change it that after the first start of the activityTracker has to inser his age and weight
 		age= 40; 
@@ -46,14 +51,28 @@ public class TrackerSystem {
 		setUpDailySteps(); 
 		setUpDailyCalories();
 		setUpActivities(); 
+		setUpSleep(); 
 		
 		currentDate = new Date(); 
 		cal1 =Calendar.getInstance();
 		cal1.setTime(currentDate); 
-		checkDate(); 
+		checkDate();
+		startCheckMeters(); 
 	}
 	
-	ScheduledExecutorService service;
+	public void startCheckMeters() {
+		 Runnable runnable = new Runnable() {	      
+			 public void run() {	        	        
+				 		int sensorfeedback  = sensor.meassureMeters(); 
+				   	 	currentDailySteps.addSteps(sensorfeedback);
+				   	 	currentDailyCalories.addCalories(sensorfeedback *5);
+				   	}	    	      	    
+			 };	    	    
+			 service = Executors.newSingleThreadScheduledExecutor();
+			 service.scheduleAtFixedRate(runnable, 0, 30, TimeUnit.MINUTES);	
+	}
+	
+
 	public void startActivity () {
 		currentActivity = new Activity(currentDailySteps, currentDailyCalories);
 		 
@@ -79,7 +98,7 @@ public class TrackerSystem {
 		}
 	}
 	
-	ScheduledExecutorService service2;
+
 	public void startSleep () {
 		sleep = new Sleep();
 		 Runnable runnable = new Runnable() {	      
@@ -94,12 +113,12 @@ public class TrackerSystem {
 	
 	public void endSleep() {
 		// end the loop for getting data from the sensor
-		service2.shutdown();
+		service.shutdown();
 		// update DailySteps and DailyCalories
 		sleep.endSleep();
 		// save activity in front of our "Database"
-		for (int i = saveActivities.length -1; i>= 1 ; i--) {
-			saveActivities[i]= saveActivities[i-1]; 
+		for (int i = saveSleeps.length -1; i>= 1 ; i--) {
+			saveSleeps[i]= saveSleeps[i-1]; 
 		}
 	}
 
@@ -152,6 +171,24 @@ public class TrackerSystem {
 		// fill saveDailySteps with empty data
 		for ( int i = 0; i< saveDailySteps.length ; i++) {
 			saveDailySteps[i]= new DailySteps(); 
+		}
+	}
+	
+	private void setUpSleep() {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date ;
+		Date date2;
+		try {
+			date = format.parse("1000/01/01 00:00:00");
+			date2 = format.parse("1000/01/02 00:00:00");
+			sleep = new Sleep(date,date2); 
+		} catch (ParseException e) {
+			sleep = new Sleep(); 
+			e.printStackTrace();
+		}
+		// fill saveDailySteps with empty data
+		for ( int i = 0; i< saveSleeps.length ; i++) {
+			saveSleeps [i]= new Sleep(); 
 		}
 	}
 	

@@ -33,11 +33,13 @@ import ch.makery.adress.MainApp;
 
 	    Timeline clock;
 	    @FXML
-	    private void initialize() {  		
+	    private void initialize() {  	
 	    	clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-			
-			int minsOfSleep = (int) mainApp.getTrackerSystem().getSleep().getSleepTime();
 			sleepLevel.setText(Integer.toString(mainApp.getTrackerSystem().getSleep().getLevel()));
+			startTime.setText(mainApp.getTrackerSystem().getSleep().getSleepStartTime());
+			endTime.setText(mainApp.getTrackerSystem().getSleep().getSleepEndeTime());
+			int minsOfSleep = (int) mainApp.getTrackerSystem().getSleep().getSleepTime();
+			
 			if (minsOfSleep < 60 ) {
 				sleepTime.setText(Integer.toString(minsOfSleep));
 				minsorhr.setText("minutes");
