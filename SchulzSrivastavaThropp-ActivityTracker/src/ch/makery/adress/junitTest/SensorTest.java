@@ -9,10 +9,5 @@ import ch.makery.adress.model.Sensor;
 public class SensorTest {
     Sensor testSensor = new Sensor();
 
-    @Test
-    public void testSetVariables(){
-        testSensor.setVariables();
-
-    }
 
 }

@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69d99ef1-623e-4536-9c41-36cf6c7d747d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch/makery/adress/junitTest/DailyCaloriesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch/makery/adress/junitTest/DailyStepsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch/makery/adress/junitTest/SensorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchulzSrivastavaThropp-ActivityTracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SchulzSrivastavaThropp-ActivityTracker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/makery/adress/junitTest/ActivityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/adress/junitTest/ActivityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/makery/adress/model/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/adress/model/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/makery/adress/model/DailyCalories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/adress/model/DailyCalories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/makery/adress/model/DailySteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/adress/model/DailySteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch/makery/adress/junitTest/SensorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/adress/junitTest/SensorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ch/makery/adress/model/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/adress/model/Sensor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,24 +28,24 @@
         <counts>
           <entry key="classpath" value="1" />
           <entry key="fxml" value="3" />
-          <entry key="java" value="20" />
+          <entry key="java" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Eclipse" value="1" />
-          <entry key="JAVA" value="20" />
+          <entry key="JAVA" value="26" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="869" />
+          <entry key="java" value="874" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="869" />
+          <entry key="JAVA" value="874" />
         </counts>
       </usages-collector>
     </session>
@@ -71,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/Activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="720">
+              <caret line="48" column="68" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -90,19 +83,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/Sensor.java">
+        <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/junitTest/DailyCaloriesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="420">
+              <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/DailyCalories.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/Sensor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/junitTest/SensorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+            <state relative-caret-position="150">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,8 +151,8 @@
         <option value="$PROJECT_DIR$/src/ch/makery/adress/junitTest/DailyStepsTest.java" />
         <option value="$PROJECT_DIR$/src/ch/makery/adress/model/Activity.java" />
         <option value="$PROJECT_DIR$/src/ch/makery/adress/junitTest/ActivityTest.java" />
-        <option value="$PROJECT_DIR$/src/ch/makery/adress/model/Sensor.java" />
         <option value="$PROJECT_DIR$/src/ch/makery/adress/junitTest/SensorTest.java" />
+        <option value="$PROJECT_DIR$/src/ch/makery/adress/model/Sensor.java" />
       </list>
     </option>
   </component>
@@ -210,7 +224,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573673633499" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573673928715" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -313,7 +327,7 @@
       <updated>1572916426874</updated>
       <workItem from="1572916428125" duration="2955000" />
       <workItem from="1573581013655" duration="218000" />
-      <workItem from="1573664197673" duration="4916000" />
+      <workItem from="1573664197673" duration="5262000" />
     </task>
     <servers />
   </component>
@@ -350,7 +364,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8089000" />
+    <option name="totallyTimeSpent" value="8435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -365,7 +379,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -476,44 +490,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/Sleep.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/view/CalorieGoalController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/DailyCalories.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/junitTest/DailyCaloriesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/junitTest/DailyStepsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -528,17 +508,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/Activity.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/junitTest/DailyStepsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state>
+          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/Sensor.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/Sleep.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -552,13 +535,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/junitTest/SensorTest.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        <state relative-caret-position="720">
+          <caret line="48" column="68" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/junitTest/DailyCaloriesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/DailyCalories.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/junitTest/SensorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/makery/adress/model/Sensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
         </state>
       </provider>
     </entry>
