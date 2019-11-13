@@ -43,6 +43,11 @@ public class Activity {
 
 	private int calculateCalories(int steps) {
 		// needs work here. Here is just assumed that 1 steps burns 5 calories
+
+
+		//formula for calories burned
+		//caloriesBurned = ((0.4472* getHeartRate() - 0.05741*Weight + 0.074*age - 20.4022) * time/4.18);
+
 		return  (steps * 5);
 	}
 	
@@ -54,13 +59,24 @@ public class Activity {
 		return meters;
 	}
 
+	public void setMeters(int amount) {
+		meters = amount;
+	}
+
+
 	public int getAverageSpeed() {
 		return averageSpeed;
 	}
 
+
 	public int getSteps() {
 		return stepsTaken;
 	}
+
+	public void setSteps(int amount) {
+		stepsTaken = amount;
+	}
+
 
 	public int getCaloriesBurned() {
 		return caloriesBurned;

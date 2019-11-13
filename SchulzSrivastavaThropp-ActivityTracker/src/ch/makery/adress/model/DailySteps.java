@@ -7,11 +7,19 @@ public class DailySteps {
 	 dailySteps = 0; 
  }
  
- public void addSteps (int amount) {
-	 dailySteps += amount; 
+    public void setSteps (int amount) {
+	 dailySteps = amount;
  }
- 
- public int getDailySteps() {
+
+    public void subtractSteps (int amount) {
+        dailySteps -= amount;
+    }
+
+    public void addSteps (int amount) {
+        dailySteps += amount;
+    }
+
+    public int getDailySteps() {
 	 return dailySteps; 
  }
 }

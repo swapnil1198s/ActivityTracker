@@ -21,7 +21,7 @@ public class ActivityTest {
 		String actual = Integer.toString(sut.getAverageSpeed()) + Integer.toString(sut.getCaloriesBurned()) +Integer.toString(sut.getMeters())+Integer.toString(sut.getSteps());
 		String expected = "30"+"200"+ "30"+"40"; 
 		//then 
-		assertEquals (actual, expected);
+		assertEquals (expected, actual);
 	}
 	
 	// test, test
@@ -35,7 +35,7 @@ public class ActivityTest {
 		String actual = Integer.toString(sut.getAverageSpeed()) + Integer.toString(sut.getCaloriesBurned()) +Integer.toString(sut.getMeters())+Integer.toString(sut.getSteps());
 		String expected = "18"+"525"+ "55"+"105"; 
 		//then 
-		assertEquals (actual, expected);
+		assertEquals (expected,actual);
 	}
 	
 	@Test
@@ -47,9 +47,39 @@ public class ActivityTest {
 		String actual = Integer.toString(testDailyCal.getDailyCalories()) + Integer.toString(testDailySteps.getDailySteps()); 
 		String expected = "200"+"40"; 
 		//then 
-		assertEquals (actual, expected);
+		assertEquals (expected,actual);
 	}
-	
-	
+
+	@Test
+	public void testSetDailySteps() {
+		sut.setSteps(1000);
+		String actual = Integer.toString(sut.getSteps());
+		String expected = "1000";
+		assertEquals (expected, actual);
+	}
+
+	@Test
+	public void testSetMeters() {
+		sut.setMeters(1000);
+		String actual = Integer.toString(sut.getMeters());
+		String expected = "1000";
+		assertEquals (expected, actual);
+	}
+
+	@Test
+	public void testGetAverageSpeed() {
+		String actual = Integer.toString(sut.getAverageSpeed());
+		String expected = "0";
+		assertEquals (expected, actual);
+	}
+
+	@Test
+	public void testGetCaloriesBurned() {
+
+		String actual = Integer.toString(sut.getCaloriesBurned());
+		String expected = "0";
+		assertEquals (expected, actual);
+	}
+
 
 }

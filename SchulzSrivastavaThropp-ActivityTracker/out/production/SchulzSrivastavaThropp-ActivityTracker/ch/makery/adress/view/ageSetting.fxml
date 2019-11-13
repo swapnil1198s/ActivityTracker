@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.adress.view.ChangeAgeController">
+   <children>
+      <Pane layoutX="158.0" layoutY="72.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: yellow;">
+         <children>
+            <Text fill="#003c97" layoutX="98.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set age:">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Text>
+            <Text fx:id="age" layoutX="116.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21">
+               <font>
+                  <Font size="72.0" />
+               </font>
+            </Text>
+            <Text fill="#268d00" layoutX="104.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIRM">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="less" layoutX="33.0" layoutY="76.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="40.0" style="-fx-background-color: clear;">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color-fx-background-color: clear;">
+                     <image>
+                        <Image url="@left_arrow_svg_523733.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="more" layoutX="221.0" layoutY="81.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: clear;">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@right%20arrow%20icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </Pane>
+      <Button fx:id="home" layoutX="217.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="15.0" prefWidth="55.0" style="-fx-background-color: black;" />
+   </children>
+</Pane>

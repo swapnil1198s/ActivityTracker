@@ -10,6 +10,12 @@ public class Sensor {
 	
     Scanner scanner = new Scanner(System.in);
 
+    public void setVariables(int amountH, int amountM, int amountS){
+    	heartrate = amountH;
+    	meters = amountM;
+    	steps = amountS;
+	}
+
     public int [] meassureActivity () {
     	System.out.print("current Heartrate: ");
     		heartrate = scanner.nextInt();
