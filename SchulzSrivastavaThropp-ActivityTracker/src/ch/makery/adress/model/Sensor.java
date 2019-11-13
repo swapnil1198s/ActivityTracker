@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Sensor {
 	private int meters; 
     Scanner scanner = new Scanner(System.in);
-    
+
     public int [] meassureActivity () {
     	System.out.print("current Heartrate: ");
     		int heartrate = scanner.nextInt();
