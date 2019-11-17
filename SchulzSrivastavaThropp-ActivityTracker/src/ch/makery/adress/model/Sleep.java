@@ -10,24 +10,37 @@ public class Sleep {
 	private long minutes;
 	private int startTime; 
 	private int endTime;
-	private int[] heartrate = {0}; 
-	
+	private int[] heartrate = {0};
+
 	Instant start;
 	SimpleDateFormat formatter = new SimpleDateFormat("HH");
-	
+
+
+
+	//for testing purposes
+	//SimpleDateFormat formatter = new SimpleDateFormat("ss");
+
+
 	public Sleep (Date startDate, Date endDate) {
 		startTime = Integer.parseInt(formatter.format(startDate));
 		endTime = Integer.parseInt(formatter.format(endDate));	  
 	}
-	
-	
+
 	public Sleep () {
 		Date date = new Date(); 
 		
 		startTime = Integer.parseInt(formatter.format(date));
-		 start = Instant.now();
-		 heartrate = new int [0]; 
-		 
+		start = Instant.now();
+		heartrate = new int [0];
+	}
+
+
+	public void startSleepForTesting(){
+		Date date = new Date();
+
+		startTime = Integer.parseInt(formatter.format(date));
+		start = Instant.now();
+		heartrate = new int [0];
 	}
 	
 	public void endSleep () {
@@ -36,10 +49,18 @@ public class Sleep {
 		
 		Instant finish = Instant.now();
 		minutes = Duration.between(start, finish).toMinutes();
+
+
+
+
+
+		//for test cases
+		//minutes = Duration.between(start, finish).toSeconds();
+		//minutes = minutes * 60;
 	}
 	
 	public long getSleepTime (){
-		return minutes; 
+		return minutes;
 	}
 	public String getSleepStartTime (){
 		if (startTime <13) {
@@ -60,43 +81,43 @@ public class Sleep {
 	}
 	
 	public int getLevel () {
+
 		int sum = 0; 
 		for (int i =0; i< heartrate.length; i++) {
 	            sum += heartrate[i]; 
 	        }
-		int averageHR ; 
+	        int averageHR;
 		if ( minutes < 5) {
 			averageHR = sum; 
 		}
 		else {
-		 averageHR = (int) (sum/(minutes/5)); 
+		 averageHR = (int) (sum/(minutes/5));
+
+
+			//for test cases
+			//averageHR = sum;
 		}
 		
 		// needs work: follow: https://ouraring.com/heart-rate-while-sleeping/
 		// level 5 sleep with more than 8 hours and an average heart rate is between 50 and 60
-		
-		if (minutes > 480 && averageHR > 50 && averageHR <60) {
+
+		//System.out.println("minutes: " + minutes);
+		//System.out.println("avg hr: " + averageHR);
+
+
+		if (minutes >= 480 && averageHR > 50 && averageHR <60) {
 			return 5; 
 	    }
-		if (minutes > 420 && averageHR > 50 && averageHR <60){
+		else if (minutes > 420 && averageHR > 50 && averageHR <60){
 			return 4; 
 		}
-		if (minutes > 390 && averageHR > 50 && averageHR <80){
+		else if (minutes > 390 && averageHR > 50 && averageHR <80){
 			return 3; 
 		}
-		if (minutes > 300 && averageHR <100) {
+		else if (minutes > 300 && averageHR <100) {
 			return 2; 
 		}
 		return 1; 
-	}
-
-	
-	// For testing reasons
-	public void setStartTime (int startTime) {
-		this.startTime = startTime; 
-	}
-	public void setEndeTime (int endTime) {
-		this.endTime = endTime; 
 	}
 
 	public void recordSleep(int sensorfeedback) {
@@ -105,7 +126,7 @@ public class Sleep {
 			 heartrate2 [i] = heartrate[i]; 
 		 }
 		 heartrate2 [heartrate.length]= sensorfeedback; 
-		 heartrate = heartrate2; 
+		 heartrate = heartrate2;
 	}
 
 }
