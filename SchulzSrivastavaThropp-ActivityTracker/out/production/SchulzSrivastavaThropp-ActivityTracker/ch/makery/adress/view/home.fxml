@@ -22,9 +22,9 @@
                </font></Label>
             <Button fx:id="startActivity" layoutX="134.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="64.0" style="-fx-background-color: grey;">
                <graphic>
-                  <ImageView fitHeight="36.0" fitWidth="37.0">
+                  <ImageView fitHeight="40.0" fitWidth="38.0">
                      <image>
-                        <Image url="@activity%20icon.png" />
+                        <Image url="@pictures/activity%20icon.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -41,14 +41,14 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="calories" layoutX="200.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="15.0" style="-fx-background-color: black;" />
       <Button fx:id="settings" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="43.0" prefWidth="52.0" style="-fx-background-color: grey;">
          <graphic>
-            <ImageView fitHeight="50.0" fitWidth="52.0">
+            <ImageView fitHeight="43.0" fitWidth="45.0">
                <image>
-                  <Image url="@sleep.png" />
+                  <Image url="@pictures/sleep.png" />
                </image>
             </ImageView>
          </graphic></Button>
+      <Button fx:id="calories" layoutX="200.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="15.0" style="-fx-background-color: black;" />
    </children>
 </Pane>

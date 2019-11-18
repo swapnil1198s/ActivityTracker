@@ -108,13 +108,13 @@ public class Sleep {
 		if (minutes >= 480 && averageHR > 50 && averageHR <60) {
 			return 5; 
 	    }
-		else if (minutes > 420 && averageHR > 50 && averageHR <60){
+		else if (minutes >= 420 && averageHR > 50 && averageHR <60){
 			return 4; 
 		}
-		else if (minutes > 390 && averageHR > 50 && averageHR <80){
+		else if (minutes >= 360 && averageHR > 50 && averageHR <80){
 			return 3; 
 		}
-		else if (minutes > 300 && averageHR <100) {
+		else if (minutes >= 300 && averageHR <100) {
 			return 2; 
 		}
 		return 1; 

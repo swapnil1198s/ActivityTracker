@@ -13,7 +13,7 @@
                <graphic>
                   <ImageView fitHeight="140.0" fitWidth="136.0">
                      <image>
-                        <Image url="@wakeup.png" />
+                        <Image url="@pictures/wakeup.png" />
                      </image>
                   </ImageView>
                </graphic></Button>

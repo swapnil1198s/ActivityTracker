@@ -31,7 +31,7 @@ public class SleepTest {
     }
 
     @Test
-    public void testGetSleepLevel(){
+    public void testGetSleepLevel5(){
         int hours = 8;
         slp.startSleepForTesting();
         try {
@@ -47,6 +47,100 @@ public class SleepTest {
         System.out.println("sleep level: " + slp.getLevel());
 
         assertEquals(5,slp.getLevel());
+    }
+
+    @Test
+    public void testGetSleepLevel4(){
+        int hours = 7;
+        slp.startSleepForTesting();
+        try {
+            //time to sleep in milliseconds
+            Thread.sleep(hours * 1000);
+        }
+        catch(InterruptedException e){
+        }
+        slp.endSleep();
+        slp.recordSleep(55);
+
+        System.out.println("sleep time: " + slp.getSleepTime());
+        System.out.println("sleep level: " + slp.getLevel());
+
+        assertEquals(4,slp.getLevel());
+    }
+
+    @Test
+    public void testGetSleepLevel3(){
+        int hours = 6;
+        slp.startSleepForTesting();
+        try {
+            //time to sleep in milliseconds
+            Thread.sleep(hours * 1000);
+        }
+        catch(InterruptedException e){
+        }
+        slp.endSleep();
+        slp.recordSleep(55);
+
+        System.out.println("sleep time: " + slp.getSleepTime());
+        System.out.println("sleep level: " + slp.getLevel());
+
+        assertEquals(3,slp.getLevel());
+    }
+
+    @Test
+    public void testGetSleepLevel2(){
+        int hours = 5;
+        slp.startSleepForTesting();
+        try {
+            //time to sleep in milliseconds
+            Thread.sleep(hours * 1000);
+        }
+        catch(InterruptedException e){
+        }
+        slp.endSleep();
+        slp.recordSleep(55);
+
+        System.out.println("sleep time: " + slp.getSleepTime());
+        System.out.println("sleep level: " + slp.getLevel());
+
+        assertEquals(2,slp.getLevel());
+    }
+    @Test
+    public void testGetSleepLevel1_badHeartRate(){
+        int hours = 7;
+        slp.startSleepForTesting();
+        try {
+            //time to sleep in milliseconds
+            Thread.sleep(hours * 1000);
+        }
+        catch(InterruptedException e){
+        }
+        slp.endSleep();
+        slp.recordSleep(101);
+
+        System.out.println("sleep time: " + slp.getSleepTime());
+        System.out.println("sleep level: " + slp.getLevel());
+
+        assertEquals(1,slp.getLevel());
+    }
+
+    @Test
+    public void testGetSleepLevel1_badSleepTime(){
+        int hours = 1;
+        slp.startSleepForTesting();
+        try {
+            //time to sleep in milliseconds
+            Thread.sleep(hours * 1000);
+        }
+        catch(InterruptedException e){
+        }
+        slp.endSleep();
+        slp.recordSleep(55);
+
+        System.out.println("sleep time: " + slp.getSleepTime());
+        System.out.println("sleep level: " + slp.getLevel());
+
+        assertEquals(1,slp.getLevel());
     }
 }
 

@@ -12,17 +12,19 @@
    <children>
       <Pane layoutX="158.0" layoutY="72.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: grey;">
          <children>
-            <Text fill="#003c97" layoutX="77.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="daily steps: ">
+            <Text fill="#003c97" layoutX="1.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="steps taken:" textAlignment="CENTER" wrappingWidth="300.0">
                <font>
                   <Font size="29.0" />
                </font>
             </Text>
-            <Button fx:id="settings" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="48.0" prefWidth="44.0" style="-fx-background-color: grey;" />
-            <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="7.0" layoutY="10.0">
-               <image>
-                  <Image url="@Settings_black-512.png" />
-               </image>
-            </ImageView>
+            <Button fx:id="settings" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="48.0" prefWidth="44.0" style="-fx-background-color: grey;">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="44.0">
+                     <image>
+                        <Image url="@pictures/Settings_black-512.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Label fx:id="steps" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="48.0" prefHeight="153.0" prefWidth="300.0" text="2345" textAlignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="84.0" />
