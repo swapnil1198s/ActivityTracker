@@ -8,33 +8,32 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.adress.view.ChangeWeightController">
    <children>
-      <Pane layoutX="158.0" layoutY="72.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: yellow;">
+      <Pane layoutX="158.0" layoutY="72.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #ddcece;">
          <children>
-            <Text fill="#003c97" layoutX="104.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="weight:">
+            <Text layoutX="79.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set weight:">
                <font>
                   <Font size="29.0" />
                </font>
             </Text>
-            <Text layoutX="92.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="185">
+            <Button fx:id="less" graphicTextGap="0.0" layoutX="37.0" layoutY="69.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="60.0" prefWidth="42.0" style="-fx-background-color: grey;" text="-" textFill="WHITE">
                <font>
-                  <Font size="72.0" />
+                  <Font name="System Bold Italic" size="20.0" />
+               </font></Button>
+            <Button fx:id="more" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="220.0" layoutY="69.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="60.0" prefWidth="42.0" style="-fx-background-color: grey;" text="+" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
                </font>
-            </Text>
-            <Text fill="#800505" layoutX="15.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="double click button to exit">
+            </Button>
+            <Label fx:id="weightText" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="56.0" prefHeight="88.0" prefWidth="119.0" text="200">
                <font>
-                  <Font size="22.0" />
-               </font>
-            </Text>
-            <Text fill="#268d00" layoutX="44.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="press button to confirm">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Label layoutX="216.0" layoutY="101.0" text="lbs">
-               <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold Italic" size="60.0" />
                </font>
             </Label>
+            <Text layoutX="131.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lbs">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
       <Button fx:id="button" layoutX="217.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="15.0" prefWidth="55.0" style="-fx-background-color: black;" />

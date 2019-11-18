@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.util.Duration;
 import ch.makery.adress.MainApp;
 
-public class CaloriesBurnedController {
+public class DailyCaloriesController {
 	@FXML
 	private Button steps;
 	@FXML
@@ -21,7 +21,7 @@ public class CaloriesBurnedController {
 	// Reference to the main application.
 	private MainApp mainApp;
 
-	public CaloriesBurnedController() {
+	public DailyCaloriesController() {
 	}
 
 	Timeline clock;

@@ -1,20 +1,19 @@
 package ch.makery.adress.view;
 
+import ch.makery.adress.MainApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import ch.makery.adress.MainApp;
 
+public class CaloriesGoalController {
 
-public class SettingsListController {
     @FXML
-    private Button settings;
-
+    private Button next;
 
     // Reference to the main application.
     private MainApp mainApp;
 
-    public SettingsListController() {
+    public CaloriesGoalController() {
     }
 
     @FXML
@@ -23,7 +22,9 @@ public class SettingsListController {
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        mainApp.showHomeScene();
+
+        if(event.getSource() == next)
+            mainApp.showCaloriesBurnedScene();
     }
 
     public void setMainApp(MainApp mainApp) {

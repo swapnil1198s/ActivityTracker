@@ -2,18 +2,15 @@ package ch.makery.adress;
 
 import java.io.IOException;
 
-import ch.makery.adress.view.CaloriesBurnedController;
+import ch.makery.adress.view.DailyCaloriesController;
 import ch.makery.adress.view.ChangeAgeController;
-import ch.makery.adress.view.ChangeDateController;
-import ch.makery.adress.view.ChangeTimeController;
 import ch.makery.adress.view.ChangeWeightController;
 import ch.makery.adress.view.DailyStepController;
 import ch.makery.adress.view.HomeController;
 import ch.makery.adress.view.SleepPatternController;
 import ch.makery.adress.view.StepGoalController;
 import ch.makery.adress.view.ActivitySceneController;
-import ch.makery.adress.view.CalorieGoalController;
-import ch.makery.adress.view.SettingsListController;
+import ch.makery.adress.view.CaloriesGoalController;
 import ch.makery.adress.view.SleepController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -46,7 +43,7 @@ public class MainApp extends Application {
         	
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
+            loader.setLocation(MainApp.class.getResource("view/rootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
             
             // Show the scene containing the root layout.
@@ -57,7 +54,25 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+    
+    public void showActivityScene() {
+    	  try {
+              FXMLLoader loader = new FXMLLoader();
+              loader.setLocation(MainApp.class.getResource("view/activity.fxml"));
+              Pane showActivity = (Pane) loader.load();
 
+              rootLayout.setCenter(showActivity);
+
+              // Give the controller access to the main app.
+              ActivitySceneController controller = loader.getController();
+              controller.setMainApp(this);
+
+
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+		
+	}
     public void showHomeScene() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -78,13 +93,13 @@ public class MainApp extends Application {
     public void showCaloriesBurnedScene() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/caloriesBurned.fxml"));
+            loader.setLocation(MainApp.class.getResource("view/dailyCalories.fxml"));
             Pane showCaloriesBurned = (Pane) loader.load();
             
             rootLayout.setCenter(showCaloriesBurned);
 
             // Give the controller access to the main app.
-           CaloriesBurnedController controller = loader.getController();
+           DailyCaloriesController controller = loader.getController();
            controller.setMainApp(this);
  
 
@@ -95,7 +110,7 @@ public class MainApp extends Application {
     public void showSetStepGoalScene() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/stepgoal.fxml"));
+            loader.setLocation(MainApp.class.getResource("view/stepGoal.fxml"));
             Pane showSetStepGoalScene = (Pane) loader.load();
 
             rootLayout.setCenter(showSetStepGoalScene);
@@ -113,7 +128,7 @@ public class MainApp extends Application {
         try {
         	 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/totalSteps.fxml"));
+            loader.setLocation(MainApp.class.getResource("view/dailySteps.fxml"));
             Pane showDailyStepScene = (Pane) loader.load();
             
             rootLayout.setCenter(showDailyStepScene);
@@ -132,9 +147,9 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/sleepPattern.fxml"));
-            Pane showCaloriesBurned = (Pane) loader.load();
+            Pane showSleepPatern = (Pane) loader.load();
             
-            rootLayout.setCenter(showCaloriesBurned);
+            rootLayout.setCenter(showSleepPatern);
 
             // Give the controller access to the main app.
            SleepPatternController controller = loader.getController();
@@ -150,48 +165,12 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/sleep.fxml"));
-            Pane showCaloriesBurned = (Pane) loader.load();
+            Pane showSleep = (Pane) loader.load();
             
-            rootLayout.setCenter(showCaloriesBurned);
+            rootLayout.setCenter(showSleep);
 
             // Give the controller access to the main app.
            SleepController controller = loader.getController();
-           controller.setMainApp(this);
- 
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public void showChangeDateScene() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/changeDate.fxml"));
-            Pane showCaloriesBurned = (Pane) loader.load();
-            
-            rootLayout.setCenter(showCaloriesBurned);
-
-            // Give the controller access to the main app.
-           ChangeDateController controller = loader.getController();
-           controller.setMainApp(this);
- 
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public void showChangeTimeScene() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/changeTime.fxml"));
-            Pane showCaloriesBurned = (Pane) loader.load();
-            
-            rootLayout.setCenter(showCaloriesBurned);
-
-            // Give the controller access to the main app.
-           ChangeTimeController controller = loader.getController();
            controller.setMainApp(this);
  
 
@@ -211,6 +190,7 @@ public class MainApp extends Application {
             // Give the controller access to the main app.
            ChangeWeightController controller = loader.getController();
            controller.setMainApp(this);
+           controller.setWeight(trackerSystem.getWeight());
  
 
         } catch (IOException e) {
@@ -222,13 +202,14 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/ageSetting.fxml"));
-            Pane showCaloriesBurned = (Pane) loader.load();
+            Pane showChangeAge = (Pane) loader.load();
             
-            rootLayout.setCenter(showCaloriesBurned);
+            rootLayout.setCenter(showChangeAge);
 
             // Give the controller access to the main app.
            ChangeAgeController controller = loader.getController();
            controller.setMainApp(this);
+           controller.setAge(trackerSystem.getAge());
  
 
         } catch (IOException e) {
@@ -238,13 +219,13 @@ public class MainApp extends Application {
     public void showCalorieGoalScene() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/calorieGoal.fxml"));
+            loader.setLocation(MainApp.class.getResource("view/caloriesGoal.fxml"));
             Pane showCalorieGoalScene = (Pane) loader.load();
 
             rootLayout.setCenter(showCalorieGoalScene);
 
             // Give the controller access to the main app.
-            CalorieGoalController controller = loader.getController();
+            CaloriesGoalController controller = loader.getController();
             controller.setMainApp(this);
 
 
@@ -254,42 +235,8 @@ public class MainApp extends Application {
 
 
     }
-    public void showSettingsList() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/settings.fxml"));
-            Pane showSettingsList = (Pane) loader.load();
-
-            rootLayout.setCenter(showSettingsList);
-
-            // Give the controller access to the main app.
-            SettingsListController controller = loader.getController();
-            controller.setMainApp(this);
 
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void showActivityScene() {
-    	  try {
-              FXMLLoader loader = new FXMLLoader();
-              loader.setLocation(MainApp.class.getResource("view/activity.fxml"));
-              Pane showSettingsList = (Pane) loader.load();
-
-              rootLayout.setCenter(showSettingsList);
-
-              // Give the controller access to the main app.
-              ActivitySceneController controller = loader.getController();
-              controller.setMainApp(this);
-
-
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
-		
-	}
     public Stage getPrimaryStage() {
         return primaryStage;
     }

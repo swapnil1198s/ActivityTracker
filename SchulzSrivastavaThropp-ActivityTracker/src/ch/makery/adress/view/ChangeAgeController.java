@@ -3,23 +3,25 @@ package ch.makery.adress.view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import ch.makery.adress.MainApp;
-import javafx.scene.text.Text;
 
 public class ChangeAgeController {
     @FXML
     private Button home;
     @FXML
-    private Text age;
+    private Label ageText;
     @FXML
     private Button less;
     @FXML
     private Button more;
+    private int age; 
     
     // Reference to the main application.
     private MainApp mainApp;
 
     public ChangeAgeController() {
+    	
     }
 
     @FXML
@@ -30,18 +32,15 @@ public class ChangeAgeController {
     @FXML
     private void handleButtonAction(ActionEvent event) {
     	if (event.getSource() == less) {
-    		int current = Integer.parseInt(age.getText());
-    		int newAge = current-1; 
-    		String nAge = Integer.toString(newAge);
-            age.setText(nAge); 
+    		age--; 
+    		ageText.setText(Integer.toString(age));
     		}
          else if(event.getSource() == more) {
-        	int current = Integer.parseInt(age.getText());
-			int newAge = current+1; 
-			String nAge = Integer.toString(newAge);
-			age.setText(nAge); 
+        	age ++; 
+        	ageText.setText(Integer.toString(age));
 			}
          else if(event.getSource() == home){
+        	 mainApp.getTrackerSystem().setAge(age);
         	 mainApp.showHomeScene();
          }
     	
@@ -52,4 +51,8 @@ public class ChangeAgeController {
         this.mainApp = mainApp;
 
     }
+     public void setAge (int age) {
+    	 this.age = age;
+    	 ageText.setText(Integer.toString(age));
+     }
 }
