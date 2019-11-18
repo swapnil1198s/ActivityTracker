@@ -29,6 +29,16 @@
                   <Font name="System Bold Italic" size="60.0" />
                </font>
             </Label>
+            <Button fx:id="male" layoutX="86.0" layoutY="138.0" mnemonicParsing="false" text="male">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="female" layoutX="149.0" layoutY="138.0" mnemonicParsing="false" text="female">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Button fx:id="home" layoutX="217.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="15.0" prefWidth="55.0" style="-fx-background-color: black;" />

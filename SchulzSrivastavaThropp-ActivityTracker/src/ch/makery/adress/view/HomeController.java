@@ -76,7 +76,7 @@ public class HomeController {
 	private void handleButtonAction(ActionEvent event) {
 
 		if (event.getSource() == calories)
-			mainApp.showCaloriesBurnedScene();
+			mainApp.showDailyCaloriesScene();
 		else if (event.getSource() == settings) {
 			// mainApp.showChangeDateScene();
 			// mainApp.showSettingsList();

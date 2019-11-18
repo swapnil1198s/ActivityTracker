@@ -2,18 +2,18 @@ package ch.makery.adress.model;
 
 public class Activity {
 	private DailySteps dailySteps;
-	private DailyCalories dailyCalories; 
+	private DailyCalories dailyCalories;
 	private int meters;
 	private int averageSpeed;
 	private int caloriesBurned;
 	private int stepsTaken;
 	private int activityTime;
-	private int lastHeartRate; 
-	//private int averageHeartRate; 
+	private int lastHeartRate;
+	// private int averageHeartRate;
 
 	public Activity(DailySteps dailySteps, DailyCalories dailyCalories) {
 		this.dailySteps = dailySteps;
-		this.dailyCalories = dailyCalories; 
+		this.dailyCalories = dailyCalories;
 		meters = 0;
 		averageSpeed = 0;
 		caloriesBurned = 0;
@@ -27,14 +27,14 @@ public class Activity {
 		this.caloriesBurned += calculateCalories(steps);
 		// meters and steps are updated every minute from the sensor
 		this.activityTime += 1;
-		this.lastHeartRate = heartRate; 
-		//updateAverageHeartRate(); 
+		this.lastHeartRate = heartRate;
+		// updateAverageHeartRate();
 		updateAverageSpeed();
 	}
 
-	/*private void updateAverageHeartRate() {
-		this.averageHeartRate = 
-	}*/
+	/*
+	 * private void updateAverageHeartRate() { this.averageHeartRate = }
+	 */
 
 	public void stopActivity() {
 		dailySteps.addSteps(stepsTaken);
@@ -44,13 +44,13 @@ public class Activity {
 	private int calculateCalories(int steps) {
 		// needs work here. Here is just assumed that 1 steps burns 5 calories
 
+		// formula for calories burned
+		// caloriesBurned = ((0.4472* getHeartRate() - 0.05741*Weight + 0.074*age -
+		// 20.4022) * time/4.18);
 
-		//formula for calories burned
-		//caloriesBurned = ((0.4472* getHeartRate() - 0.05741*Weight + 0.074*age - 20.4022) * time/4.18);
-
-		return  (steps * 5);
+		return (steps * 5);
 	}
-	
+
 	private void updateAverageSpeed() {
 		averageSpeed = meters / activityTime;
 	}
@@ -63,11 +63,9 @@ public class Activity {
 		meters = amount;
 	}
 
-
 	public int getAverageSpeed() {
 		return averageSpeed;
 	}
-
 
 	public int getSteps() {
 		return stepsTaken;
@@ -77,12 +75,11 @@ public class Activity {
 		stepsTaken = amount;
 	}
 
-
 	public int getCaloriesBurned() {
 		return caloriesBurned;
 	}
-	
-	public int getHeartRate () {
-		return lastHeartRate; 
+
+	public int getHeartRate() {
+		return lastHeartRate;
 	}
 }
