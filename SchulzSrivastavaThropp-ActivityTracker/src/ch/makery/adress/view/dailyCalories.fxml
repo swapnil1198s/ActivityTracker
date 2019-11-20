@@ -30,7 +30,7 @@
                <font>
                   <Font name="System Bold Italic" size="84.0" />
                </font></Label>
-            <ProgressBar layoutX="50.0" layoutY="147.0" prefWidth="200.0" progress="0.0" />
+            <ProgressBar fx:id="progress" layoutX="50.0" layoutY="147.0" prefWidth="200.0" progress="0.0" />
          </children>
       </Pane>
       <Button fx:id="steps" layoutX="217.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="15.0" prefWidth="55.0" style="-fx-background-color: black;" />

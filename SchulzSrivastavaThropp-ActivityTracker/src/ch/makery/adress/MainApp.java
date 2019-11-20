@@ -82,9 +82,9 @@ public class MainApp extends Application {
 
 			// Give the controller access to the main app.
 			CaloriesGoalController controller = loader.getController();
+			controller.setCaloriesGoal (trackerSystem.getCaloriesGoal());
 			controller.setMainApp(this);
-			//trackerSystem.calculateCaloriesGoal();
-			controller.setCaloriesGoal (trackerSystem.getCaloriesGoal()); 
+			 
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -226,7 +226,7 @@ public class MainApp extends Application {
 			// Give the controller access to the main app.
 			StepGoalController controller = loader.getController();
 			controller.setMainApp(this);
-			//trackerSystem.calculateStepGoal(); 
+			trackerSystem.calculateStepGoal(); 
 			controller.setStepGoal(trackerSystem.getStepGoal());
 
 		} catch (IOException e) {

@@ -26,7 +26,6 @@ public class StepGoalController {
 
 	@FXML
 	private void initialize() {
-		stepGoalText.setText(Integer.toString(stepGoal));
 	}
 
 	@FXML
@@ -46,6 +45,7 @@ public class StepGoalController {
 
 	public void setStepGoal(int stepGoal) {
 		this.stepGoal = stepGoal;
+		stepGoalText.setText(Integer.toString(stepGoal));
 	}
 
 	public void setMainApp(MainApp mainApp) {

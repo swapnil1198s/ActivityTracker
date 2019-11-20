@@ -22,15 +22,17 @@ public class CaloriesGoalController {
 	private MainApp mainApp;
 
 	public CaloriesGoalController() {
+		 
 	}
 
 	@FXML
 	private void initialize() {
-		caloriesGoalText.setText(Integer.toString(caloriesGoal));
+		//caloriesGoalText.setText(Integer.toString(caloriesGoal));
 	}
 
 	@FXML
 	private void handleButtonAction(ActionEvent event) {
+		
 		if (event.getSource() == less) {
 			caloriesGoal = caloriesGoal - 100;
 			caloriesGoalText.setText(Integer.toString(caloriesGoal));
@@ -50,5 +52,6 @@ public class CaloriesGoalController {
 
 	public void setCaloriesGoal(int caloriesGoal) {
 		this.caloriesGoal = caloriesGoal;
+		caloriesGoalText.setText(Integer.toString(caloriesGoal));
 	}
 }

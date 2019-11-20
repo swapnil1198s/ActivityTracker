@@ -33,7 +33,7 @@ public class DailyCaloriesController {
 	private void initialize() {
 		clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
 			calories.setText(Integer.toString(mainApp.getTrackerSystem().getDailyCalories()));
-			progress.
+			progress.setProgress((mainApp.getTrackerSystem().getDailyCalories()/mainApp.getTrackerSystem().getCaloriesGoal())*100); 
 		}), new KeyFrame(Duration.seconds(1)));
 		clock.setCycleCount(Animation.INDEFINITE);
 		clock.play();
