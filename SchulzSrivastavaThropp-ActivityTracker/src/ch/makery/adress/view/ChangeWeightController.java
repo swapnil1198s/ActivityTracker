@@ -30,11 +30,15 @@ public class ChangeWeightController {
 	@FXML
 	private void handleButtonAction(ActionEvent event) {
 		if (event.getSource() == less) {
-			weight--;
-			weightText.setText(Integer.toString(weight));
+			if (weight > 1) {
+				weight--;
+				weightText.setText(Integer.toString(weight));
+			}
 		} else if (event.getSource() == more) {
-			weight++;
-			weightText.setText(Integer.toString(weight));
+			if (weight < 400) {
+				weight++;
+				weightText.setText(Integer.toString(weight));
+			}
 		} else if (event.getSource() == button) {
 			mainApp.getTrackerSystem().setWeight(weight);
 			mainApp.showChangeAgeScene();

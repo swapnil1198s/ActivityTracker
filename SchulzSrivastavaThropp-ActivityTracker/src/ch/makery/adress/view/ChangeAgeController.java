@@ -36,11 +36,15 @@ public class ChangeAgeController {
 	@FXML
 	private void handleButtonAction(ActionEvent event) {
 		if (event.getSource() == less) {
-			age--;
-			ageText.setText(Integer.toString(age));
+			if (age > 1) {
+				age--;
+				ageText.setText(Integer.toString(age));
+			}
 		} else if (event.getSource() == more) {
-			age++; 
-			ageText.setText(Integer.toString(age));
+			if (age < 120) {
+				age++;
+				ageText.setText(Integer.toString(age));
+			}
 		} else if (event.getSource() == male) {
 			mainApp.getTrackerSystem().setGender(false);
 		} else if (event.getSource() == female) {

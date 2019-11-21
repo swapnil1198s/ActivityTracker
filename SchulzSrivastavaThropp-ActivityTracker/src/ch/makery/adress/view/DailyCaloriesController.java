@@ -31,9 +31,14 @@ public class DailyCaloriesController {
 
 	@FXML
 	private void initialize() {
+		
+		
 		clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-			calories.setText(Integer.toString(mainApp.getTrackerSystem().getDailyCalories()));
-			progress.setProgress((mainApp.getTrackerSystem().getDailyCalories()/mainApp.getTrackerSystem().getCaloriesGoal())*100); 
+			double dc = mainApp.getTrackerSystem().getDailyCalories();
+			double cG = mainApp.getTrackerSystem().getCaloriesGoal();
+			calories.setText(Integer.toString((int)dc));
+			progress.setProgress(dc/cG);
+			
 		}), new KeyFrame(Duration.seconds(1)));
 		clock.setCycleCount(Animation.INDEFINITE);
 		clock.play();

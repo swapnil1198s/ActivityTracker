@@ -75,7 +75,7 @@ public class TrackerSystem {
 			}
 		};
 		service = Executors.newSingleThreadScheduledExecutor();
-		service.scheduleAtFixedRate(runnable, 0, 30, TimeUnit.MINUTES);
+		service.scheduleAtFixedRate(runnable, 0, 30, TimeUnit.SECONDS);
 	}
 
 	public void startActivity() {
@@ -247,7 +247,6 @@ public class TrackerSystem {
 
 	public void setCaloriesGoal(int caloriesGoal) {
 		this.caloriesGoal = caloriesGoal;
-
 	}
 
 	public int getCaloriesGoal() {

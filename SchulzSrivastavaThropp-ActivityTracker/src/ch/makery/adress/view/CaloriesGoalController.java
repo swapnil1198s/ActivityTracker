@@ -22,23 +22,27 @@ public class CaloriesGoalController {
 	private MainApp mainApp;
 
 	public CaloriesGoalController() {
-		 
+
 	}
 
 	@FXML
 	private void initialize() {
-		//caloriesGoalText.setText(Integer.toString(caloriesGoal));
+		// caloriesGoalText.setText(Integer.toString(caloriesGoal));
 	}
 
 	@FXML
 	private void handleButtonAction(ActionEvent event) {
-		
+
 		if (event.getSource() == less) {
-			caloriesGoal = caloriesGoal - 100;
-			caloriesGoalText.setText(Integer.toString(caloriesGoal));
+			if (caloriesGoal <= 100) {
+				caloriesGoal = caloriesGoal - 100;
+				caloriesGoalText.setText(Integer.toString(caloriesGoal));
+			}
 		} else if (event.getSource() == more) {
-			caloriesGoal = caloriesGoal + 100;
-			caloriesGoalText.setText(Integer.toString(caloriesGoal));
+			if (caloriesGoal <= 25000) {
+				caloriesGoal = caloriesGoal + 100;
+				caloriesGoalText.setText(Integer.toString(caloriesGoal));
+			}
 		} else if (event.getSource() == next) {
 			mainApp.getTrackerSystem().setCaloriesGoal(caloriesGoal);
 			mainApp.showHomeScene();

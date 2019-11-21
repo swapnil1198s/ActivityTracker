@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.util.Duration;
 import ch.makery.adress.MainApp;
 
@@ -17,7 +18,9 @@ public class DailyStepController {
 	private Button settings;
 	@FXML
 	private Label steps;
-
+	
+	@FXML 
+	private ProgressBar progress; 
 	// Reference to the main application.
 	private MainApp mainApp;
 
@@ -30,7 +33,10 @@ public class DailyStepController {
 	@FXML
 	private void initialize() {
 		clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-			steps.setText(Integer.toString(mainApp.getTrackerSystem().getDailySteps()));
+			double dS = mainApp.getTrackerSystem().getDailySteps();
+			double sG = mainApp.getTrackerSystem().getStepGoal();
+			steps.setText(Integer.toString((int)dS));
+			progress.setProgress(dS/sG);
 		}), new KeyFrame(Duration.seconds(1)));
 		clock.setCycleCount(Animation.INDEFINITE);
 		clock.play();

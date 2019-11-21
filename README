@@ -2,7 +2,13 @@ README
 
 
 CODE PART:
+The activity tracker is started once over the MainApp class. In the beginning you have to insert your age, gender and weight. Based on this information the activity recommends a daily step goal and a daily calories goal, which you can change so it perfectly fits you. After that you will be guided to the home screen and the "normal" operation starts. The sensor (for testing and simulating reasons our sensor will be the console where you have to insert the data asked for) is collecting data every 30 seconds. 
+From the home screen you have different options:
+	1) start an activity: after pressing the activity button the sensor (so the console again) will record your heartrate and meters and calculate through this how many calories you have burned and shows it on the display. To end the activity just press the "end activity" button and the recording will end. If you press the physical button ( simulated by the black button on the side) you will get back to the home scene.
+	2) record your sleep: press the sleep button. after that your herat rate will be recorded and based on this and the hours of sleep the activity tracker calculates a sleep level from 1 to five, where 5 is the best sleep. You can have look over the summary by pressing the "wakeup" button.
+	3) go to different views by pressing the physical button. You can have a look over your daily steps, calories and how much of your daily goals you achieved. If you press the "settings" button there you can change your weight, nd age again. On the main views is also the summary of your last sleep.
 
+Also the activity Tracker will save your calories,steps and sleep from the last 10 days and also save the last 30 activities. Every day it will automatically create a new DailyCalories and DailyStep class, save the last one and throw the class from 10 days before out of the storage. These data sets are only accesible over the computer but not the activity tracker itself.
 
 
 TESTING PART:
