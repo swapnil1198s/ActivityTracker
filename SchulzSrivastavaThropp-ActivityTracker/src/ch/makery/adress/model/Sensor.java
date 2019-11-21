@@ -11,10 +11,10 @@ public class Sensor {
 	public int[] meassureActivity() {
 		System.out.print("current Heartrate: ");
 		heartrate = scanner.nextInt();
-		System.out.print("steps in last 30 seconds: ");
-		steps = scanner.nextInt();
+		System.out.print("meters in last 30 seconds: ");
+		meters = scanner.nextInt();
 
-		int[] result = { heartrate, steps, meters };
+		int[] result = { heartrate, meters, steps };
 		return result;
 	}
 
@@ -23,10 +23,10 @@ public class Sensor {
 		return scanner.nextInt();
 	}
 
-	public int meassureMeters() {
-		System.out.print("Meters in last 30 seconds: ");
-		meters = scanner.nextInt();
-		return meters;
+	public int meassureSteps() {
+		System.out.print("Steps in last 30 seconds: ");
+		steps = scanner.nextInt();
+		return steps;
 	}
 
 	// methods for test. same as above but they have hard coded input values instead

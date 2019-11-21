@@ -63,13 +63,13 @@ public class TrackerSystem {
 		cal1 = Calendar.getInstance();
 		cal1.setTime(currentDate);
 		checkDate();
-		startCheckMeters();
+		startCheckSteps();
 	}
 
-	public void startCheckMeters() {
+	public void startCheckSteps() {
 		Runnable runnable = new Runnable() {
 			public void run() {
-				int sensorfeedback = sensor.meassureMeters();
+				int sensorfeedback = sensor.meassureSteps();
 				currentDailySteps.addSteps(sensorfeedback);
 				currentDailyCalories.addCalories(sensorfeedback * 5);
 			}

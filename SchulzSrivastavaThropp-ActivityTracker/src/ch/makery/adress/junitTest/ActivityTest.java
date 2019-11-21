@@ -20,7 +20,7 @@ public class ActivityTest {
 		// when
 		String actual = Integer.toString(sut.getAverageSpeed()) + Integer.toString(sut.getCaloriesBurned())
 				+ Integer.toString(sut.getMeters()) + Integer.toString(sut.getSteps());
-		String expected = "30" + "200" + "30" + "40";
+		String expected = "30" + "10" + "30" + "40";
 		// then
 		assertEquals(expected, actual);
 	}
@@ -35,7 +35,7 @@ public class ActivityTest {
 		// when
 		String actual = Integer.toString(sut.getAverageSpeed()) + Integer.toString(sut.getCaloriesBurned())
 				+ Integer.toString(sut.getMeters()) + Integer.toString(sut.getSteps());
-		String expected = "18" + "525" + "55" + "105";
+		String expected = "18" + "25" + "55" + "105";
 		// then
 		assertEquals(expected, actual);
 	}
@@ -48,7 +48,7 @@ public class ActivityTest {
 		// when
 		String actual = Integer.toString(testDailyCal.getDailyCalories())
 				+ Integer.toString(testDailySteps.getDailySteps());
-		String expected = "200" + "40";
+		String expected = "10" + "40";
 		// then
 		assertEquals(expected, actual);
 	}

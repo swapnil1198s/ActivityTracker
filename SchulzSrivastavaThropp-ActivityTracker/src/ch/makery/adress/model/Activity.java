@@ -1,5 +1,7 @@
 package ch.makery.adress.model;
 
+import ch.makery.adress.TrackerSystem;
+
 public class Activity {
 	private DailySteps dailySteps;
 	private DailyCalories dailyCalories;
@@ -9,7 +11,8 @@ public class Activity {
 	private int stepsTaken;
 	private int activityTime;
 	private int lastHeartRate;
-	// private int averageHeartRate;
+	//private TrackerSystem trackerSystem; 
+
 
 	public Activity(DailySteps dailySteps, DailyCalories dailyCalories) {
 		this.dailySteps = dailySteps;
@@ -19,6 +22,7 @@ public class Activity {
 		caloriesBurned = 0;
 		stepsTaken = 0;
 		activityTime = 0;
+		//this.trackerSystem = trackerSystem; 
 	}
 
 	public void recordActivity(int heartRate, int mt, int steps) {
@@ -28,7 +32,6 @@ public class Activity {
 		// meters and steps are updated every minute from the sensor
 		this.activityTime += 1;
 		this.lastHeartRate = heartRate;
-		// updateAverageHeartRate();
 		updateAverageSpeed();
 	}
 
@@ -42,13 +45,12 @@ public class Activity {
 	}
 
 	private int calculateCalories(int steps) {
-		// needs work here. Here is just assumed that 1 steps burns 5 calories
+		// needs work here. Here is just assumed that 1 steps burns 0,25 calories
 
 		// formula for calories burned
-		// caloriesBurned = ((0.4472* getHeartRate() - 0.05741*Weight + 0.074*age -
-		// 20.4022) * time/4.18);
+		//caloriesBurned = ((0.4472* getHeartRate() - 0.05741* (trackerSystem.Weight + 0.074*age - 20.4022) * time/4.18);
 
-		return (steps * 5);
+		return (int) (steps * 0.25);
 	}
 
 	private void updateAverageSpeed() {
