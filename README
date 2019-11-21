@@ -16,11 +16,13 @@ Also the activity Tracker will save your calories,steps and sleep from the last 
 TESTING PART:
 For our testing we used a JUnit framwork. 
 
+TEST GROUP 1
 To run all tests EXCEPT the SleepTest you must follow these steps:
 1)open up the ide and navigate to the test file you wish to run.
 2)right click and select "run" from the option.
 this will start our basic junit tests and the result will be displayed in the console.
 
+TEST GROUP 2
 To run the SleepTest you must follow these steps:
 1) navigate to SleepTest and Sleep java files
 2) in the Sleep java file you will notice commented/uncommented lines with a similar structure to this:
@@ -45,4 +47,4 @@ Line 86
 
 5) once you change the code at the three lines above you can right click the SleepTest file and select run to begin the tests, this will start our basic junit tests and the result will be displayed in the console.
 	
-
+*** You must comment/uncomment the lines listed above to switch between the two testing groups ***
