@@ -1,7 +1,5 @@
 package ch.makery.adress.model;
 
-import ch.makery.adress.TrackerSystem;
-
 public class Activity {
 	private DailySteps dailySteps;
 	private DailyCalories dailyCalories;
@@ -11,8 +9,7 @@ public class Activity {
 	private int stepsTaken;
 	private int activityTime;
 	private int lastHeartRate;
-	//private TrackerSystem trackerSystem; 
-
+	// private TrackerSystem trackerSystem;
 
 	public Activity(DailySteps dailySteps, DailyCalories dailyCalories) {
 		this.dailySteps = dailySteps;
@@ -22,7 +19,7 @@ public class Activity {
 		caloriesBurned = 0;
 		stepsTaken = 0;
 		activityTime = 0;
-		//this.trackerSystem = trackerSystem; 
+		// this.trackerSystem = trackerSystem;
 	}
 
 	public void recordActivity(int heartRate, int mt, int steps) {
