@@ -1,5 +1,7 @@
 README
 
+This README explains how to run instances of our code.
+
 
 CODE PART:
 The activity tracker is started once over the MainApp class. In the begining you have to insert your age, gender and weight. Based on this information the activity recommends a daily step goal and a daily calories goal, which you can change so it perfectly fits your needs. After that you will be guided to the home screen and the "normal" operation starts. The sensor (for testing and simulating reasons our sensor will be the console, where you have to insert the data asked for) is collecting data every 30 seconds. 
@@ -12,4 +14,35 @@ Also the activity Tracker will save your calories,steps and sleep from the last 
 
 
 TESTING PART:
+For our testing we used a JUnit framwork. 
+
+To run all tests EXCEPT the SleepTest you must follow these steps:
+1)open up the ide and navigate to the test file you wish to run.
+2)right click and select "run" from the option.
+this will start our basic junit tests and the result will be displayed in the console.
+
+To run the SleepTest you must follow these steps:
+1) navigate to SleepTest and Sleep java files
+2) in the Sleep java file you will notice commented/uncommented lines with a similar structure to this:
+	
+	averageHR = (int) (sum / (minutes / 5));
+
+	// for test cases
+	// averageHR = sum;
+	
+3) When you see this ^^^ switch which vairable assignment statement is commented/uncommented so it looks like this:
+
+	//averageHR = (int) (sum / (minutes / 5));
+
+	// for test cases
+	averageHR = sum;
+	
+4) there are three places where this takes place:
+
+Line 18
+Line 49
+Line 86
+
+5) once you change the code at the three lines above you can right click the SleepTest file and select run to begin the tests, this will start our basic junit tests and the result will be displayed in the console.
+	
 
