@@ -35,21 +35,13 @@ public class Activity {
 		updateAverageSpeed();
 	}
 
-	/*
-	 * private void updateAverageHeartRate() { this.averageHeartRate = }
-	 */
-
 	public void stopActivity() {
 		dailySteps.addSteps(stepsTaken);
 		dailyCalories.addCalories(caloriesBurned);
 	}
 
 	private int calculateCalories(int steps) {
-		// needs work here. Here is just assumed that 1 steps burns 0,25 calories
-
-		// formula for calories burned
-		//caloriesBurned = ((0.4472* getHeartRate() - 0.05741* (trackerSystem.Weight + 0.074*age - 20.4022) * time/4.18);
-
+		// Here is just assumed that 1 steps burns 0,25 calorie
 		return (int) (steps * 0.25);
 	}
 

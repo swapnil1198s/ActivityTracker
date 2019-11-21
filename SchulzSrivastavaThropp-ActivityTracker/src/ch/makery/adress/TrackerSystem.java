@@ -71,7 +71,7 @@ public class TrackerSystem {
 			public void run() {
 				int sensorfeedback = sensor.meassureSteps();
 				currentDailySteps.addSteps(sensorfeedback);
-				currentDailyCalories.addCalories(sensorfeedback * 5);
+				currentDailyCalories.addCalories((int)(sensorfeedback*0.25));
 			}
 		};
 		service = Executors.newSingleThreadScheduledExecutor();

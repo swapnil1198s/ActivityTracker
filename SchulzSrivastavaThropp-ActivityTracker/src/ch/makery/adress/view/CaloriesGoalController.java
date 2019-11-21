@@ -34,7 +34,7 @@ public class CaloriesGoalController {
 	private void handleButtonAction(ActionEvent event) {
 
 		if (event.getSource() == less) {
-			if (caloriesGoal <= 100) {
+			if (caloriesGoal >= 100) {
 				caloriesGoal = caloriesGoal - 100;
 				caloriesGoalText.setText(Integer.toString(caloriesGoal));
 			}

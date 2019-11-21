@@ -31,7 +31,7 @@ public class StepGoalController {
 	@FXML
 	private void handleButtonAction(ActionEvent event) {
 		if (event.getSource() == less) {
-			if (stepGoal <= 100) {
+			if (stepGoal >= 100) {
 				stepGoal = stepGoal - 100;
 				stepGoalText.setText(Integer.toString(stepGoal));
 			}
